@@ -1,0 +1,74 @@
+{
+  "name": "fluid-fonts",
+  "displayName": "Fluid Fonts",
+  "publisher": "darwinosorio",
+  "description": "A VS Code extension for easy generation of CSS clamp() values, enabling fluid font scaling with minimal effort.",
+  "icon": "logo.jpeg",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Casper128/Fluid-Fonts"
+  },
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fluid-fonts.generateClamp",
+        "title": "Generate Clamp"
+      }
+    ],
+    "configuration": {
+      "title": "Clamp Generate",
+      "properties": {
+        "fluid-fonts.units": {
+          "type": "string",
+          "default": "px",
+          "enum": ["px", "rem"],
+          "description": "Units used in clamp function"
+        },
+        "fluid-fonts.minViewport": {
+          "type": "number",
+          "default": 320,
+          "description": "Minimum viewport width in pixels"
+        },
+        "fluid-fonts.maxViewport": {
+          "type": "number",
+          "default": 1440,
+          "description": "Maximum viewport width in pixels"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
