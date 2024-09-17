@@ -3,7 +3,7 @@
   "displayName": "Fluid Fonts",
   "publisher": "darwinosorio",
   "description": "A VS Code extension for easy generation of CSS clamp() values, enabling fluid font scaling with minimal effort.",
-  "icon": "logo.jpeg",
+  "icon": "logo.png",
   "version": "0.0.1",
   "repository": {
     "type": "git",
